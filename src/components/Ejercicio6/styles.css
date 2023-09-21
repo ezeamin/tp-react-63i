@@ -1,0 +1,8 @@
+.color-picker{
+    width: 100px;
+    height: 100px;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+}
