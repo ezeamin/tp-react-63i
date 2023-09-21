@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import InputField from '../components/Ejercicio8/InputField';
 
 const Ejercicio8 = () => {
   const nameInput = useRef();
@@ -42,6 +43,7 @@ const Ejercicio8 = () => {
       emailInput.current?.classList.remove('is-invalid');
     }
 
+    // Si el objeto errors tiene alguna propiedad, significa que hay errores
     return Object.keys(errors).length === 0;
   };
 
@@ -62,58 +64,22 @@ const Ejercicio8 = () => {
     >
       <h1 className='text-center'>Formulario</h1>
       <section className='row'>
-        <fieldset className='col-12 col-md-6 mb-2'>
-          <label htmlFor='name-input' className='form-label'>
-            Nombre
-          </label>
-          <input
-            type='text'
-            id='name-input'
-            className='form-control'
-            required
-            ref={nameInput}
-          />
-          <p className='invalid-feedback'>Revisa este campo</p>
-        </fieldset>
-        <fieldset className='col-12 col-md-6 mb-2'>
-          <label htmlFor='lastName-input' className='form-label'>
-            Apellido
-          </label>
-          <input
-            type='text'
-            id='lastName-input'
-            className='form-control'
-            required
-            ref={lastNameInput}
-          />
-          <p className='invalid-feedback'>Revisa este campo</p>
-        </fieldset>
-        <fieldset className='col-12 col-md-6 mb-2'>
-          <label htmlFor='dni-input' className='form-label'>
-            DNI
-          </label>
-          <input
-            type='number'
-            id='dni-input'
-            className='form-control'
-            required
-            ref={dniInput}
-          />
-          <p className='invalid-feedback'>Revisa este campo</p>
-        </fieldset>
-        <fieldset className='col-12 col-md-6 mb-2'>
-          <label htmlFor='email-input' className='form-label'>
-            Email
-          </label>
-          <input
-            type='email'
-            id='email-input'
-            className='form-control'
-            required
-            ref={emailInput}
-          />
-          <p className='invalid-feedback'>Revisa este campo</p>
-        </fieldset>
+        <InputField ref={nameInput} label='Nombre' name='name' maxLength='20' />
+        <InputField
+          ref={lastNameInput}
+          label='Apellido'
+          name='lastName'
+          maxLength='20'
+        />
+        <InputField
+          ref={dniInput}
+          label='DNI'
+          name='dni'
+          type="number"
+          max='99999999'
+          min='1000000'
+        />
+        <InputField ref={emailInput} label='Email' name='email' type="email" />
       </section>
       <div className='text-end'>
         <button type='submit' className='btn btn-primary'>
