@@ -12,6 +12,8 @@ import Ejercicio6 from './pages/Ejercicio6';
 import Ejercicio7 from './pages/Ejercicio7';
 import Ejercicio8 from './pages/Ejercicio8';
 import Ejercicio9 from './pages/Ejercicio9';
+import Ejercicio10 from './pages/Ejercicio10';
+import Ejercicio11 from './pages/Ejercicio11';
 
 const Router = () => {
   return (
@@ -35,6 +37,8 @@ const Router = () => {
           <Route path='/ejercicio-7' element={<Ejercicio7 />} />
           <Route path='/ejercicio-8' element={<Ejercicio8 />} />
           <Route path='/ejercicio-9' element={<Ejercicio9 />} />
+          <Route path='/ejercicio-10' element={<Ejercicio10 />} />
+          <Route path='/ejercicio-11' element={<Ejercicio11 />} />
         </Routes>
       </main>
     </BrowserRouter>
