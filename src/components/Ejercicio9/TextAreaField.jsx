@@ -2,10 +2,10 @@ import { forwardRef } from 'react';
 
 // forwardRef permite mandar un ref de un componente padre a un hijo
 // Este es un patrón más avanzado, pero solo implica envolver el componente en forwardRef
-const InputField = forwardRef((props, ref) => {
+const TextAreaField = forwardRef((props, ref) => {
   // type = "text" es un valor por defecto, si no se envia ese prop
   // ...other son todos los props que no se estan destructurando
-  const { label, name, type = 'text', fieldsetClassName, ...other } = props;
+  const { label, name, fieldsetClassName, ...other } = props;
 
   // Si no se envia un className, se usa el valor por defecto de columnas
   const className = fieldsetClassName || 'col-12 col-md-6 mb-2';
@@ -19,8 +19,7 @@ const InputField = forwardRef((props, ref) => {
       <label htmlFor={`${name}-input`} className='form-label'>
         {label}
       </label>
-      <input
-        type={type}
+      <textarea
         id={`${name}-input`}
         className='form-control'
         required
@@ -36,6 +35,6 @@ const InputField = forwardRef((props, ref) => {
 
 // Esto es necesario para que el componente se muestre bien en React DevTools
 // eslint da error si no lo agregamos, pero es basicamente ponerle el mismo nombre que el componente
-InputField.displayName = 'InputField';
+TextAreaField.displayName = 'TextAreaField';
 
-export default InputField;
+export default TextAreaField;

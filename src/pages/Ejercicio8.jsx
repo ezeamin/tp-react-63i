@@ -32,7 +32,7 @@ const Ejercicio8 = () => {
       hasError = true;
       nameInput.current?.classList.add('is-invalid');
     } else {
-      emailInput.current?.classList.remove('is-invalid');
+      nameInput.current?.classList.remove('is-invalid');
     }
 
     // Apellido

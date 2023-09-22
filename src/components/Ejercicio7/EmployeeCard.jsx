@@ -1,10 +1,11 @@
+import { generateRandomAvatar } from '../../helpers/helpers';
+
 import './styles.css';
 
 const EmployeeCard = (props) => {
   const { employee } = props;
 
-  const randomSeed = Math.floor(Math.random() * 1000);
-  const randomAvatarUrl = `https://api.dicebear.com/7.x/miniavs/svg?seed=${randomSeed}`;
+  const randomAvatarUrl = generateRandomAvatar()
 
   return (
     <li className='list-group-item d-flex align-items-center'>
