@@ -13,11 +13,15 @@ const Ejercicio11 = () => {
     // Cambiar un estado de carga para mostrar el mensaje e inhabilitar el botón de envío
     setIsLoading(true);
 
-    const res = await fetch(
-      `https://newsapi.org/v2/everything?language=es&q=${query}&pageSize=15&apiKey=${API_KEY}`
-    );
-    const data = await res.json();
-    setNews(data.articles);
+    try {
+      const res = await fetch(
+        `https://newsapi.org/v2/everything?language=es&q=${query}&pageSize=15&apiKey=${API_KEY}`
+      );
+      const data = await res.json();
+      setNews(data.articles);
+    } catch (error) {
+      alert('Ocurrio un error al buscar las noticias');
+    }
 
     setIsLoading(false);
   };
@@ -25,7 +29,7 @@ const Ejercicio11 = () => {
   return (
     <>
       <h1>Noticias</h1>
-      <SearchForm fetchNews={fetchNews} isLoading={isLoading} />
+      <SearchForm fetchNews={fetchNews} isLoading={isLoading} type='news' />
       <NewsList news={news} isLoading={isLoading} />
     </>
   );

@@ -1,10 +1,13 @@
 import { useState } from 'react';
 
 const SearchForm = (props) => {
-  const { fetchNews, isLoading } = props;
+  const { fetchNews, isLoading, type } = props;
 
   const [searchValue, setSearchValue] = useState('');
   const [isInvalid, setIsInvalid] = useState(false);
+
+  // Para reutilizar el componente en el ejercicio 13
+  const isNews = type === 'news';
 
   const handleChange = (e) => {
     setSearchValue(e.target.value);
@@ -25,12 +28,14 @@ const SearchForm = (props) => {
 
   return (
     <form className='card w-100 p-4' onSubmit={handleSubmit}>
-      <div className='alert alert-info'>
-        <p className='mb-0'>
-          No se utiliza las categorias porque la API ya no permite filtrar por
-          categorias
-        </p>
-      </div>
+      {isNews && (
+        <div className='alert alert-info'>
+          <p className='mb-0'>
+            No se utiliza las categorias porque la API ya no permite filtrar por
+            categorias
+          </p>
+        </div>
+      )}
       <fieldset className='d-flex'>
         <label htmlFor='search-input' className='me-2 mt-2'>
           Buscar:
