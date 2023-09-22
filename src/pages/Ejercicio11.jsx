@@ -10,6 +10,7 @@ const Ejercicio11 = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const fetchNews = async (query) => {
+    // Cambiar un estado de carga para mostrar el mensaje e inhabilitar el botón de envío
     setIsLoading(true);
 
     const res = await fetch(
