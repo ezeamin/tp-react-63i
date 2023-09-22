@@ -1,6 +1,6 @@
 import LinkButton from '../components/Home/LinkButton';
 
-const ejercicios = Array.from({ length: 13 }, (_, i) => i + 1);
+const ejercicios = Array.from({ length: 14 }, (_, i) => i + 1);
 
 const Home = () => {
   return (
