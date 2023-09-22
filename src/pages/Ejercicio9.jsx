@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import AppointmentForm from '../components/Ejercicio9/AppointmentForm';
 import AppointmentsList from '../components/Ejercicio9/AppointmentsList';
@@ -6,6 +6,10 @@ import AppointmentsList from '../components/Ejercicio9/AppointmentsList';
 const Ejercicio9 = () => {
   const appointmentsLS = JSON.parse(localStorage.getItem('appointments')) || [];
   const [appointments, setAppointments] = useState(appointmentsLS);
+
+  useEffect(() => {
+    localStorage.setItem('appointments', JSON.stringify(appointments));
+  }, [appointments]);
 
   return (
     <>
