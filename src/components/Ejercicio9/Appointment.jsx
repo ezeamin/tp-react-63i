@@ -17,7 +17,7 @@ const Appointment = (props) => {
   };
 
   return (
-    <article className='col-12 col-md-4'>
+    <article className='col-12 col-md-4 mb-1 p-1'>
       <div className='card w-100'>
         <header className='card-header d-flex'>
           <img
@@ -34,14 +34,15 @@ const Appointment = (props) => {
           <p className='card-text'>Fecha: {formattedDate}</p>
           <p className='card-text'>Hora: {appointment.time}</p>
           <p className='card-text'>Sintomas: {appointment.symptoms}</p>
-          <div className='text-end'>
-            <button className='btn btn-danger' onClick={handleDelete}>
-              Borrar &times;
-            </button>
-          </div>
         </div>
+        <footer className='card-footer text-end'>
+          <button className='btn btn-danger' onClick={handleDelete}>
+            Borrar &times;
+          </button>
+        </footer>
       </div>
     </article>
   );
 };
+
 export default Appointment;
