@@ -18,7 +18,7 @@ const Ejercicio11 = () => {
         `https://newsapi.org/v2/everything?language=es&q=${query}&pageSize=15&apiKey=${API_KEY}`
       );
       const data = await res.json();
-      
+
       if (data.articles) {
         setNews(data.articles);
       }
@@ -32,6 +32,18 @@ const Ejercicio11 = () => {
   return (
     <>
       <h1>Noticias</h1>
+      <div className='alert alert-warning w-100 mt-2'>
+        <p className='mb-0'>
+          Aviso: no funciona la llamada a la API desde Netlify. Mas información{' '}
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href='https://stackoverflow.com/questions/62157026/error-426-from-newsapi-org-once-i-deployed-my-site-on-netlify'
+          >
+            acá
+          </a>
+        </p>
+      </div>
       <SearchForm fetchNews={fetchNews} isLoading={isLoading} type='news' />
       <NewsList news={news} isLoading={isLoading} />
     </>
