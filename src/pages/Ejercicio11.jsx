@@ -18,7 +18,10 @@ const Ejercicio11 = () => {
         `https://newsapi.org/v2/everything?language=es&q=${query}&pageSize=15&apiKey=${API_KEY}`
       );
       const data = await res.json();
-      setNews(data.articles);
+      
+      if (data.articles) {
+        setNews(data.articles);
+      }
     } catch (error) {
       alert('Ocurrio un error al buscar las noticias');
     }
