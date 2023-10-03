@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import AppointmentForm from '../components/Ejercicio9/AppointmentForm';
 import AppointmentsList from '../components/Ejercicio9/AppointmentsList';
 
+const appointmentsLS = JSON.parse(localStorage.getItem('appointments')) || [];
+
 const Ejercicio9 = () => {
-  const appointmentsLS = JSON.parse(localStorage.getItem('appointments')) || [];
   const [appointments, setAppointments] = useState(appointmentsLS);
 
   useEffect(() => {

@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import ColorForm from '../components/Ejercicio6/ColorForm';
 import ColorList from '../components/Ejercicio6/ColorList';
 
+const colorsLS = JSON.parse(localStorage.getItem('colors')) || [];
+
 const Ejercicio6 = () => {
-  const colorsLS = JSON.parse(localStorage.getItem('colors')) || [];
   const [colors, setColors] = useState(colorsLS);
 
   // Ejecutar cada vez que cambie colors

@@ -1,15 +1,15 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Task from '../components/Ejercicio4/Task';
 
 import { generateRandomId } from '../helpers/helpers';
-import { useEffect } from 'react';
+
+// Traer las tareas del local storage
+// Esto va fuera de la funcion porque se ejecuta una sola vez, al inicio
+const tasksLS = JSON.parse(localStorage.getItem('tasks')) || [];
 
 const Ejercicio5 = () => {
-  // Traer las tareas del local storage
-  const tasksLS = JSON.parse(localStorage.getItem('tasks')) || [];
-
-  // Usarlas como valor inicial para el estado
+  // Usar las tareas como valor inicial para el estado
   const [tasks, setTasks] = useState(tasksLS);
 
   // Utilizo un ref para no controlar el elemento
@@ -23,8 +23,14 @@ const Ejercicio5 = () => {
 
     // Solo si la tarea no está vacía
     if (taskInput.value) {
-      setTasks((state) => [...state, { id: generateRandomId(), text: taskInput.value }]);
-      taskInput.value = '';
+      // esto puede crearse así o con una clase "Task" como siempre hicimos
+      const newTask = { id: generateRandomId(), text: taskInput.value };
+
+      // Guardo en el estado la nueva tarea, copiando todo lo que ya tenia
+      setTasks((state) => [...state, newTask]); // es similar a setTasks([...tasks, newTask])
+
+      // Reseteo el input
+      inputRef.current.value = '';
     }
   };
 

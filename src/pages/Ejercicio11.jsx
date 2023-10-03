@@ -3,6 +3,8 @@ import { useState } from 'react';
 import SearchForm from '../components/Ejercicio11/SearchForm';
 import NewsList from '../components/Ejercicio11/NewsList';
 
+// Traer la API key desde las variables de entorno
+// No puede estar hardcodeada en el codigo porque el codigo es accesible por cualquiera
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 
 const Ejercicio11 = () => {
