@@ -24,7 +24,7 @@ const Ejercicio8v2 = () => {
       >
         <h1 className="text-center">Formulario</h1>
         <section className="row">
-          <InputFieldv2 type={"text"} register={register} name={"nombre"} errors={errors}
+          <InputFieldv2 type="text" register={register} name="nombre" errors={errors}
             others={{
               minLength: {
                 value: 3,
@@ -37,7 +37,7 @@ const Ejercicio8v2 = () => {
             }}
           ></InputFieldv2>
           <InputFieldv2
-            type={"text"} register={register} name={"apellido"} errors={errors}
+            type="text" register={register} name="apellido" errors={errors}
             others={{
               minLength: {
                 value: 3,
@@ -49,7 +49,7 @@ const Ejercicio8v2 = () => {
               },
             }}
           ></InputFieldv2>
-          <InputFieldv2 type={"number"} register={register} name={"DNI"} errors={errors}
+          <InputFieldv2 type="number" register={register} name="DNI" errors={errors}
             others={{
               min: {
                 value: 1000000,
@@ -61,7 +61,7 @@ const Ejercicio8v2 = () => {
               },
             }}
           ></InputFieldv2>
-          <InputFieldv2 type={"email"} register={register} name={"email"} errors={errors}
+          <InputFieldv2 type="email" register={register} name="email" errors={errors}
             others={{
               pattern: {
                 value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
